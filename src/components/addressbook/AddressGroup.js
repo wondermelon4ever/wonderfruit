@@ -48,12 +48,13 @@ const AddressGroup = (props) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
+        console.log("handleChange clicked...");
         setExpanded(isExpanded ? panel : false);
     };
 
     const handleMemberAddition = (event) => {
-        event.preventDefault();
-        console.log("addmember icon clicked !!!");
+        event.stopPropagation();
+        console.log("addmember icon clicked !!!" + event);
     }
 
     return (
@@ -65,7 +66,7 @@ const AddressGroup = (props) => {
             >
               {
                 showAddMemberIcon === true? 
-                <PersonAddAlt1Icon sx={{ color: "#757575", paddingRight: "5px"}} onClick={ handleMemberAddition }/>
+                <PersonAddAlt1Icon sx={{ color: "#757575", paddingRight: "7px"}} onClick={ handleMemberAddition }/>
                 :
                 ""
               }
