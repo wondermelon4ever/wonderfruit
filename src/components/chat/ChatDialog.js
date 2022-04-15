@@ -15,7 +15,7 @@ const ChatDialog = (props) => {
         <div style={{ height: '600px', width: "100%" }}>
             <SearchBar 
                 doSearchCallback={ searchPerson } 
-                label="이름, 전화번호 또는 담당업무로 검색"
+                label="이름, 대화방 제목 또는 내용으로 검색"
                 onClick={ openSearchDialog }
             />
         </div>
