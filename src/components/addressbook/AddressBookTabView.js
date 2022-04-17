@@ -11,7 +11,7 @@ import AddressGroupList from './AddressGroupList';
 import SearchBar from '../widgets/SearchBar';
 import WonderModalDialog from '../widgets/dialog/WonderDialog';
 
-const AddressBook = (props) => {
+const AddressBookTabView = (props) => {
 
     const [additionDialogShow, setAdditionDialogShow] = React.useState(false);
 
@@ -53,7 +53,7 @@ const AddressBook = (props) => {
             <Fab 
                 color="primary" 
                 aria-label="add" 
-                size="medium"
+                // size="medium"
                 sx={{
                     position: 'fixed',
                     right: 25,
@@ -108,4 +108,4 @@ const AddressBook = (props) => {
     )
 }
 
-export default AddressBook;
+export default AddressBookTabView;

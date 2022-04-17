@@ -25,9 +25,11 @@ const PersonRow = (props) => {
     return (
         <div style={{ display: "flex", margin: "0px", padding: "0px" }}>
             <div>
-                <IconButton sx={{ padding: 0 }}>
-                    <Avatar alt={ props.name } src={ props.src } sx={{ width: 56, height: 56 }} />
-                </IconButton>
+                <Tooltip title={ props.name }>
+                    <IconButton sx={{ padding: 0 }}>
+                        <Avatar alt={ props.name } src={ props.src } sx={{ width: 56, height: 56 }} />
+                    </IconButton>
+                </Tooltip>
             </div>
             <div style={{ marginLeft: "15px" }}>
                 <div style={{ display: "flex" }}>

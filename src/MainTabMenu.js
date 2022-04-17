@@ -13,9 +13,10 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 
 import WonderTabPanel from './components/widgets/tabs/WonderTabPanel';
-import AddressBook from './components/addressbook/AddressBook';
+import AddressBookTabView from './components/addressbook/AddressBookTabView';
 import BadgedIcon from './components/widgets/BadgedIcon';
-import ChatDialog from './components/chat/ChatDialog';
+import ChatTabView from './components/chat/ChatTabView';
+import ConferenceTabView from './components/conference/ConferenceTabView';
 
 const MainTabMenu = (props) => {
     const theme = useTheme();
@@ -83,13 +84,13 @@ const MainTabMenu = (props) => {
             <div style={{ width: "430px", height: "600px", backgroundColor: "#fffff", border: "1px solid gray" }}>
                 <SwipeableViews index={value} >
                     <WonderTabPanel value={value} index={0}>
-                        <AddressBook />
+                        <AddressBookTabView />
                     </WonderTabPanel>
                     <WonderTabPanel value={value} index={1}>
-                        <ChatDialog />  
+                        <ChatTabView />  
                     </WonderTabPanel>
                     <WonderTabPanel value={value} index={2}>
-                        Conference !!  
+                        <ConferenceTabView />  
                     </WonderTabPanel>
                     <WonderTabPanel value={value} index={3}>
                         Show more !!  
