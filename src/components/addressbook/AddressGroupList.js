@@ -37,7 +37,7 @@ const AddressGroupList = (props) => {
                     removeIcon={ true }
                     removeMemberCallback={ removeMember }
                 />
-                <Divider sx={{ width: "430px", marginTop: "5px", marginBottom: "5px" }}/>
+                <Divider sx={{ width: "400px", marginTop: "7px", marginBottom: "7px" }}/>
                 <PersonRow 
                     name="yjson" 
                     kname="손예진" 
@@ -45,6 +45,18 @@ const AddressGroupList = (props) => {
                     department="Nextplant솔루션그룹" 
                     company="삼성SDS" 
                     src="images/avatar/3.jpg"
+                    state="BUSY"
+                    removeIcon={ true }
+                    removeMemberCallback={ removeMember }
+                />
+                <Divider sx={{ width: "400px", marginTop: "7px", marginBottom: "7px" }}/>
+                <PersonRow 
+                    name="yjson" 
+                    kname="최수영" 
+                    ename="swim.choi" 
+                    department="Nextplant솔루션그룹" 
+                    company="삼성SDS" 
+                    src="images/avatar/4.jpg"
                     state="BUSY"
                     removeIcon={ true }
                     removeMemberCallback={ removeMember }

@@ -15,6 +15,7 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import WonderTabPanel from './components/widgets/tabs/WonderTabPanel';
 import AddressBook from './components/addressbook/AddressBook';
 import BadgedIcon from './components/widgets/BadgedIcon';
+import ChatDialog from './components/chat/ChatDialog';
 
 const MainTabMenu = (props) => {
     const theme = useTheme();
@@ -85,7 +86,7 @@ const MainTabMenu = (props) => {
                         <AddressBook />
                     </WonderTabPanel>
                     <WonderTabPanel value={value} index={1}>
-                        Chat !!  
+                        <ChatDialog />  
                     </WonderTabPanel>
                     <WonderTabPanel value={value} index={2}>
                         Conference !!  

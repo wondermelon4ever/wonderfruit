@@ -56,8 +56,8 @@ const AddressBook = (props) => {
                 size="medium"
                 sx={{
                     position: 'fixed',
-                    right: 15,
-                    bottom: 15
+                    right: 25,
+                    bottom: 25
                 }}
                 onClick={ showAddressGroupAdditionDialog }
             >

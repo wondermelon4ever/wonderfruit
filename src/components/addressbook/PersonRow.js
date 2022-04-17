@@ -1,6 +1,11 @@
 import React from 'react';
 
-import Avatar from '@mui/material/Avatar';
+import {
+    Avatar,
+    IconButton,
+    Tooltip
+ } from '@mui/material';
+
 import Typography from '@mui/material/Typography';
 
 import CircleIcon from '@mui/icons-material/Circle';
@@ -20,25 +25,33 @@ const PersonRow = (props) => {
     return (
         <div style={{ display: "flex", margin: "0px", padding: "0px" }}>
             <div>
-                <Avatar alt={ props.name } src={ props.src } sx={{ width: 56, height: 56 }} />
+                <IconButton sx={{ padding: 0 }}>
+                    <Avatar alt={ props.name } src={ props.src } sx={{ width: 56, height: 56 }} />
+                </IconButton>
             </div>
             <div style={{ marginLeft: "15px" }}>
                 <div style={{ display: "flex" }}>
+                <Tooltip title={ props.state }>
                     <CircleIcon sx={{ color: color, fontSize: "18px", paddingTop: "2px" }} />
-                    <Typography sx={{ paddingLeft: "5px"}}>
-                        { props.kname } / { props.ename }
-                    </Typography>
+                </Tooltip>
+                <Typography sx={{ paddingLeft: "5px"}}>
+                    { props.kname } / { props.ename }
+                </Typography>
                 </div>
-                <div style={{ paddingLeft: "25px"}}>
+                <div style={{ paddingLeft: "25px", width: "270px" }}>
                     <Typography>
                         { props.department } / { props.company }
                     </Typography>
                 </div>
             </div>
-            <div style={{ paddingTop: "20px", paddingLeft: "50px" }}>
+            <div style={{ paddingTop: "20px", paddingLeft: "0px" }}>
             {
                 props.removeIcon == true ?
-                <RemoveCircleIcon onClick={ removeMemberCallback }/>
+                <Tooltip title="Remove">
+                    <IconButton>
+                        <RemoveCircleIcon onClick={ removeMemberCallback }/>
+                    </IconButton>
+                </Tooltip>
                 :
                 ""
             }

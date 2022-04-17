@@ -17,8 +17,8 @@ const Search = styled('div')(({ theme }) => ({
     marginRight: theme.spacing(2),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(4),
-      width: 'auto',
+      marginLeft: theme.spacing(0),
+      width: '100%',
     },
 }));
 
@@ -42,7 +42,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       // width: '100%',
       width: "330px",
       [theme.breakpoints.up('md')]: {
-        width: '30ch',
+        width: '330px',
       },
       fontSize: "13px",
     },
@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const RightmostIcon = ({children, onClick }) => {
     return (
-        <div style={{ paddingTop: "2px", paddingLeft: "7.5px", color: "#757575"}}>
+        <div style={{ paddingTop: "2px", paddingLeft: "6.5px", color: "#757575"}}>
             <IconButton onClick={ onClick }>
                 {children}
             </IconButton>
