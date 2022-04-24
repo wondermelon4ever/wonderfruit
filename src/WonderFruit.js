@@ -1,6 +1,7 @@
 import React from 'react';
 import Divider from '@mui/material/Divider';
-import TitleBar from './TitleBar';
+import TitleBar from './components/widgets/TitleBar';
+import Draggable from 'react-draggable';
 import MainTabMenu from './MainTabMenu';
 
 
@@ -15,22 +16,53 @@ import MainTabMenu from './MainTabMenu';
 const WonderFruit = (props) => {
     const [show, setShow] = React.useState(true);
     const [showShareDialog, setShowShareDialog] = React.useState(false);
+    const [activeDrags, setActiveDrags] = React.useState(0);
+    const [deltaPosition, setDeltaPosition] = React.useState({ x: 0, y:0 });
+    const [controlledPosition, setControlledPosition] = React.useState({ x: -400, y: 200 });
+    const [position, setPosition] = React.useState({ x: 0, y: 0 });
 
     // 이 부분에서 props로 넘어온 signaling 서버 주소로 접속해야 함. Signaling 서버 주소가 없거나 접속에 실패하면 Error 처리하고 끝내야 함
     React.useEffect(()=>{
 
     }, []);
 
-    const mainMenuShowToggle = (props) => {
+    const mainMenuShowToggle = () => {
         setShow(!show);
     }
 
+    const handleDrag = (e, ui) => {
+        setDeltaPosition({ x: x+ui.deltaX, y: y+ui.deltaY });
+    }
+
+    const onStart = () => {
+        // setActiveDrags(++activeDrags);
+        console.log("drags on start!");
+    }
+
+    const onStop = () => {
+        setActiveDrags(--activeDrags);
+    }
+
+    const onDrop = (e) => {
+        setActiveDrags(--activeDrags);
+        if(e.target.classList.contains("drop-target")) {
+            alert("Dropped!");
+            e.target.classList.remove('hovered');
+        }
+    }
+
+    const trackPos = (data) => {
+        setPosition({ x: data.x, y: data.y });
+    }
+
     return(
-        <div styles={{ display: show ? "block" : "none", width: "430px" }}>
-           <TitleBar title="WonderTeams" type="Main" mainMenuShowToggle={ mainMenuShowToggle }/>
-           <Divider style={{ width: "430px" }}/>
-           <MainTabMenu show={ show } />
-        </div>
+        <Draggable onDrag={ (e, data) => trackPos(data) }>
+            <div styles={{ display: show ? "block" : "none", width: "430px", cursor: "move" }}>
+                <TitleBar title="WonderTeams" type="Main" mainMenuShowToggle={ mainMenuShowToggle }/>
+                <Divider style={{ width: "430px" }}/>
+                <MainTabMenu show={ show } />
+            </div>
+        </Draggable>
     );
 }
 

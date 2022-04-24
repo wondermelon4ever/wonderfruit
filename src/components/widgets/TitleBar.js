@@ -18,7 +18,7 @@ import {
     ChevronBarUpIcon,
     PinAngleFill,
     PinFill
-} from './components/widgets/icons/CustomIcons';
+} from './icons/CustomIcons';
 
 import { useTheme } from '@mui/material/styles';
 
